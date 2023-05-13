@@ -7,34 +7,29 @@ part of 'storage_item_json_model.dart';
 // **************************************************************************
 
 _$_StorageItemJsonModel _$$_StorageItemJsonModelFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     _$_StorageItemJsonModel(
       requestAt: DateTime.parse(json['request_at'] as String),
       requestOptions: StorageItemRequestJsonModel.fromJson(
-        json['request_options'] as Map<String, dynamic>,
-      ),
+          json['request_options'] as Map<String, dynamic>),
       errorAt: json['error_at'] == null
           ? null
           : DateTime.parse(json['error_at'] as String),
       error: json['error'] == null
           ? null
           : StorageItemErrorJsonModel.fromJson(
-              json['error'] as Map<String, dynamic>,
-            ),
+              json['error'] as Map<String, dynamic>),
       responseAt: json['response_at'] == null
           ? null
           : DateTime.parse(json['response_at'] as String),
       response: json['response'] == null
           ? null
           : StorageItemResponseJsonModel.fromJson(
-              json['response'] as Map<String, dynamic>,
-            ),
+              json['response'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_StorageItemJsonModelToJson(
-  _$_StorageItemJsonModel instance,
-) =>
+        _$_StorageItemJsonModel instance) =>
     <String, dynamic>{
       'request_at': instance.requestAt.toIso8601String(),
       'request_options': instance.requestOptions,
@@ -45,31 +40,29 @@ Map<String, dynamic> _$$_StorageItemJsonModelToJson(
     };
 
 _$_StorageItemRequestJsonModel _$$_StorageItemRequestJsonModelFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     _$_StorageItemRequestJsonModel(
       data: json['data'],
-      path: json['path'],
-      sourceStackTrace: json['source_stack_trace'],
-      contentType: json['content_type'],
-      followRedirects: json['follow_redirects'],
-      listFormat: json['list_format'],
-      maxRedirects: json['max_redirects'],
-      persistentConnection: json['persistent_connection'],
-      receiveDataWhenStatusError: json['receive_data_when_status_error'],
-      responseType: json['response_type'],
+      path: json['path'] as String,
+      sourceStackTrace: _$JsonConverterFromJson<String, StackTrace>(
+          json['source_stack_trace'], stackTraceConverter.fromJson),
+      contentType: json['content_type'] as String?,
+      followRedirects: json['follow_redirects'] as bool,
+      listFormat: $enumDecode(_$ListFormatEnumMap, json['list_format']),
+      maxRedirects: json['max_redirects'] as int,
+      persistentConnection: json['persistent_connection'] as bool,
+      receiveDataWhenStatusError:
+          json['receive_data_when_status_error'] as bool,
+      responseType: $enumDecode(_$ResponseTypeEnumMap, json['response_type']),
     );
 
 Map<String, dynamic> _$$_StorageItemRequestJsonModelToJson(
-  _$_StorageItemRequestJsonModel instance,
-) =>
+        _$_StorageItemRequestJsonModel instance) =>
     <String, dynamic>{
       'data': instance.data,
       'path': instance.path,
       'source_stack_trace': _$JsonConverterToJson<String, StackTrace>(
-        instance.sourceStackTrace,
-        stackTraceConverter.toJson,
-      ),
+          instance.sourceStackTrace, stackTraceConverter.toJson),
       'content_type': instance.contentType,
       'follow_redirects': instance.followRedirects,
       'list_format': _$ListFormatEnumMap[instance.listFormat]!,
@@ -79,11 +72,11 @@ Map<String, dynamic> _$$_StorageItemRequestJsonModelToJson(
       'response_type': _$ResponseTypeEnumMap[instance.responseType]!,
     };
 
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
 ) =>
-    value == null ? null : toJson(value);
+    json == null ? null : fromJson(json as Json);
 
 const _$ListFormatEnumMap = {
   ListFormat.csv: 'csv',
@@ -101,37 +94,31 @@ const _$ResponseTypeEnumMap = {
   ResponseType.bytes: 'bytes',
 };
 
-_$_StorageItemErrorJsonModel _$$_StorageItemErrorJsonModelFromJson(
-  Map<String, dynamic> json,
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
 ) =>
+    value == null ? null : toJson(value);
+
+_$_StorageItemErrorJsonModel _$$_StorageItemErrorJsonModelFromJson(
+        Map<String, dynamic> json) =>
     _$_StorageItemErrorJsonModel(
       error: json['error'],
       message: json['message'] as String?,
       stackTrace: _$JsonConverterFromJson<String, StackTrace>(
-        json['stack_trace'],
-        stackTraceConverter.fromJson,
-      ),
+          json['stack_trace'], stackTraceConverter.fromJson),
       type: $enumDecode(_$DioErrorTypeEnumMap, json['type']),
     );
 
 Map<String, dynamic> _$$_StorageItemErrorJsonModelToJson(
-  _$_StorageItemErrorJsonModel instance,
-) =>
+        _$_StorageItemErrorJsonModel instance) =>
     <String, dynamic>{
       'error': instance.error,
       'message': instance.message,
       'stack_trace': _$JsonConverterToJson<String, StackTrace>(
-        instance.stackTrace,
-        stackTraceConverter.toJson,
-      ),
+          instance.stackTrace, stackTraceConverter.toJson),
       'type': _$DioErrorTypeEnumMap[instance.type]!,
     };
-
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
 
 const _$DioErrorTypeEnumMap = {
   DioErrorType.connectionTimeout: 'connectionTimeout',
@@ -145,8 +132,7 @@ const _$DioErrorTypeEnumMap = {
 };
 
 _$_StorageItemResponseJsonModel _$$_StorageItemResponseJsonModelFromJson(
-  Map<String, dynamic> json,
-) =>
+        Map<String, dynamic> json) =>
     _$_StorageItemResponseJsonModel(
       data: json['data'],
       extra: json['extra'] as Map<String, dynamic>,
@@ -161,8 +147,7 @@ _$_StorageItemResponseJsonModel _$$_StorageItemResponseJsonModelFromJson(
     );
 
 Map<String, dynamic> _$$_StorageItemResponseJsonModelToJson(
-  _$_StorageItemResponseJsonModel instance,
-) =>
+        _$_StorageItemResponseJsonModel instance) =>
     <String, dynamic>{
       'data': instance.data,
       'extra': instance.extra,
@@ -182,8 +167,7 @@ _$_StorageRedirectRecordItemJsonModel
         );
 
 Map<String, dynamic> _$$_StorageRedirectRecordItemJsonModelToJson(
-  _$_StorageRedirectRecordItemJsonModel instance,
-) =>
+        _$_StorageRedirectRecordItemJsonModel instance) =>
     <String, dynamic>{
       'location_path': instance.locationPath,
       'method': instance.method,

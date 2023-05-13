@@ -119,8 +119,6 @@ class StorageItemResponseJsonModel with _$StorageItemResponseJsonModel {
         statusMessage: response.statusMessage,
       );
 
-// Response<dynamic>
-
   factory StorageItemResponseJsonModel.fromJson(Map<String, dynamic> json) =>
       _$StorageItemResponseJsonModelFromJson(json);
 }

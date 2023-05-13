@@ -17,9 +17,10 @@ class WebshineRequestPage extends StatelessWidget {
             listenable: item,
             builder: (context, child) => CustomScrollView(
               slivers: [
-                SliverAppBar.medium(
+                SliverAppBar(
                   title: Text(
                     '${item.requestOptions.method} ${item.requestOptions.path}',
+                    maxLines: 1,
                   ),
                   actions: [
                     IconButton(

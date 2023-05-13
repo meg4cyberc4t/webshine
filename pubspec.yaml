@@ -1,6 +1,6 @@
 name: webshine
 description: A Lightweight interceptor for dio, allowing you to sniff traffic
-version: 0.1.0-dev.2
+version: 0.1.0-dev.3
 homepage: "https://github.com/meg4cyberc4t/webshine"
 
 environment:
