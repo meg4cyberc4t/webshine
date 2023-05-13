@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:webshine/src/storage_item.dart';
+import 'package:webshine/src/data/storage_item.dart';
 
 class WebshineStorage extends ChangeNotifier {
   WebshineStorage._();

@@ -1,5 +1,11 @@
 include: package:flutter_lints/flutter.yaml
   
+analyzer:
+  exclude: 
+    - lib/firebase_options.dart
+    - lib/**.g.dart
+    - lib/**.config.dart
+
 linter:
   rules:
     avoid_returning_null_for_void: false

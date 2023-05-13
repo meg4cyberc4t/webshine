@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:webshine/src/storage_item.dart';
+import 'package:flutter/services.dart';
+import 'package:webshine/src/data/storage_item.dart';
 
 class WebshineRequestPage extends StatelessWidget {
   final WebshineStorageItem item;
@@ -20,6 +21,13 @@ class WebshineRequestPage extends StatelessWidget {
                   title: Text(
                     '${item.requestOptions.method} ${item.requestOptions.path}',
                   ),
+                  actions: [
+                    IconButton(
+                      onPressed: () =>
+                          Clipboard.setData(ClipboardData(text: item.toJson())),
+                      icon: const Icon(Icons.copy_all_rounded),
+                    )
+                  ],
                 ),
                 const _SubHeader('Request:'),
                 _SubTile(
@@ -181,6 +189,9 @@ class _SubTileState extends State<_SubTile> {
           valueListenable: isExpandedNotifier,
           builder: (context, isExpanded, child) => ListTile(
             onTap: () => isExpandedNotifier.value = !isExpanded,
+            onLongPress: () => Clipboard.setData(
+              ClipboardData(text: '${widget.title}: ${widget.content}'),
+            ),
             title: Text(
               widget.title,
             ),

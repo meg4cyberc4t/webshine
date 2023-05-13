@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:webshine/src/data/storage_item.dart';
+import 'package:webshine/src/presentation/webshine_storage_item_tile.dart';
 import 'package:webshine/src/storage.dart';
-import 'package:webshine/src/storage_item.dart';
-import 'package:webshine/src/ui/webshine_storage_item_tile.dart';
 
 typedef RequestItemBuilder = Widget Function(WebshineStorageItem item);
 

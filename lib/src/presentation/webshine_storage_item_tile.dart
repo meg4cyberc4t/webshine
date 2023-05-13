@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:webshine/src/storage_item.dart';
-import 'package:webshine/src/ui/webshine_request_page.dart';
+import 'package:webshine/src/data/storage_item.dart';
+import 'package:webshine/src/presentation/webshine_request_page.dart';
 
 class WebshineStorageItemTile extends StatelessWidget {
   final WebshineStorageItem item;
@@ -11,11 +11,13 @@ class WebshineStorageItemTile extends StatelessWidget {
     super.key,
   });
 
-  void onTap(BuildContext context) => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => WebshineRequestPage(item: item),
-        ),
-      );
+  void onTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => WebshineRequestPage(item: item),
+      ),
+    );
+  }
 
   void onLongPress() {
     Clipboard.setData(ClipboardData(text: item.toJson()));

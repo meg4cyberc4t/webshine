@@ -12,7 +12,7 @@ Add package to your dependencies:
 webshine:
     git:
       url: https://github.com/meg4cyberc4t/webshine
-      ref: master
+      ref: main
 ```
 
 It's all!

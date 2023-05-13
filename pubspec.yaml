@@ -1,6 +1,6 @@
 name: webshine
 description: A Lightweight interceptor for dio, allowing you to sniff traffic
-version: 0.1.0
+version: 0.1.0-dev.2
 homepage: "https://github.com/meg4cyberc4t/webshine"
 
 environment:
@@ -11,8 +11,13 @@ dependencies:
   dio: ^5.1.2
   flutter:
     sdk: flutter
+  freezed: ^2.3.3
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.8.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  build_runner: ^2.4.2
+  json_serializable: ^6.6.2
